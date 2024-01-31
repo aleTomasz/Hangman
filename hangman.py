@@ -215,6 +215,8 @@ def hangmen(dificult_level, word_to_guess):
         if "_" in hiden_word:
             print(''.join(hiden_word))
             letter = input('Give letter: ').lower()
+            if letter==''or len(letter)>1:
+                continue
             if (letter == 'quit'):
                 print('you quit the game')
                 break
@@ -222,7 +224,7 @@ def hangmen(dificult_level, word_to_guess):
                 for index in range(len(hiden_word)):
                     if list_of_word_lower[index] == letter:
                         hiden_word[index] = list_of_word[index]
-                print(''.join(hiden_word))
+
             elif not letter in already_tried_letters:
                 print('you lost live\n')
                 print(graphic[already_lives])
@@ -232,13 +234,11 @@ def hangmen(dificult_level, word_to_guess):
                     break
             already_tried_letters.append(letter)
         else:
+            print(''.join(hiden_word))
             print('YOU WIN!!!')
             break
 
 
 word_to_guess = word_choose()
-print (word_to_guess)
-
 dificulty = set_dificult_level()
 hangmen(dificulty, word_to_guess)
-word_choose()
