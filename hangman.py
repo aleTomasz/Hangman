@@ -62,7 +62,7 @@ def hangmen(dificult_level, word_to_guess):
             letter = input('Give letter: ').lower()
             if letter == 'quit':
                 print('you quit the game')
-                break
+                exit()
             if letter == '' or len(letter) > 1:
                 continue
             elif letter in list_of_word_lower and not letter in already_tried_letters:
