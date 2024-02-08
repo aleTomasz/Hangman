@@ -64,6 +64,7 @@ def hangmen(dificult_level, word_to_guess):
                 print('you quit the game')
                 exit()
             if letter == '' or len(letter) > 1:
+                print('give me a letter')
                 continue
             elif letter in list_of_word_lower and not letter in already_tried_letters:
                 for index in range(len(hiden_word)):
