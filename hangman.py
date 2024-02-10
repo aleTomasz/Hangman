@@ -28,7 +28,7 @@ def word_choose():
     countries = []
     capitals = []
     words2 = words.split('\n')
-    words2.pop()
+
     for i in words2:
         pair_of_words = i.split(' | ')
 
