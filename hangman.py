@@ -1,24 +1,24 @@
 import random
+import string
+
 import graphics
 
 graphic = graphics.graphic
-dificult_level_dict = {
-    1: 'easy',
-    2: 'medium',
-    3: 'hard'
-}
 
 
 def set_dificult_level():
-    dificult_level_int = 0
+    dificult_level_dict = {
+        1: 'easy',
+        2: 'medium',
+        3: 'hard'
+    }
     while True:
         dificult_level = input(f"Choose dificult level {dificult_level_dict}\n")
-        if dificult_level.isdigit():
+
+        if dificult_level.isdigit() and int(dificult_level) in dificult_level_dict.keys():
             dificult_level_int = int(dificult_level)
-        if dificult_level_int in dificult_level_dict.keys():
             print(f'you chose level {dificult_level_dict[dificult_level_int]}')
             return dificult_level_int
-        else:
             print('choose right value')
 
 
@@ -27,9 +27,9 @@ def word_choose():
         words = file.read()
     countries = []
     capitals = []
-    words2 = words.split('\n')
+    words_lines = words.split('\n')
 
-    for i in words2:
+    for i in words_lines:
         pair_of_words = i.split(' | ')
 
         countries.append(pair_of_words[0])
@@ -63,15 +63,16 @@ def hangmen(dificult_level, word_to_guess):
             if letter == 'quit':
                 print('you quit the game')
                 exit()
-            if letter == '' or len(letter) > 1:
-                print('give me a letter')
+            if letter == '' or len(letter) > 1 or letter.isdigit():
+                print('give a letter')
                 continue
-            elif letter in list_of_word_lower and not letter in already_tried_letters:
+            #  string.ascii_letters
+            elif letter in list_of_word_lower and letter not in already_tried_letters:
                 for index in range(len(hiden_word)):
                     if list_of_word_lower[index] == letter:
                         hiden_word[index] = list_of_word[index]
 
-            elif not letter in already_tried_letters:
+            elif letter not in already_tried_letters:
                 print('you lost live\n')
                 print(graphic[already_lives])
                 already_lives += dificult_level
