@@ -35,8 +35,8 @@ def word_choose():
         countries.append(pair_of_words[0])
         capitals.append(pair_of_words[1])
 
-    words = countries + capitals
-    return random.choice(words)
+    words_list = countries + capitals
+    return random.choice(words_list)
 
 
 def hide_word(word_to_guess):
