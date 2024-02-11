@@ -5,6 +5,14 @@ import graphics
 
 graphic = graphics.graphic
 
+file = open('logo.txt', 'rt')
+
+logo = file.read()
+print(logo)
+print('Written by @emil.ozon, @aleTomasz, @Monika Kajdy-Pietrzyk')
+print('Welcome to Hangman game!')
+print()
+
 
 def set_dificult_level():
     dificult_level_dict = {
