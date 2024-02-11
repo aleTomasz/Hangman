@@ -69,7 +69,8 @@ def hangmen(dificult_level, word_to_guess):
             print(''.join(hiden_word))
             letter = input('Give letter: ').lower()
             if letter == 'quit':
-                print('you quit the game')
+                print('You quit the game')
+                print('Thanks for playing')
                 exit()
             if letter == '' or len(letter) > 1 or letter.isdigit():
                 print('give a letter')
