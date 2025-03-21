@@ -1,4 +1,4 @@
-# 🎯 Hangman
+# 🎯 Hangman (Python)
 
 **Hangman** is a classic word-guessing game written in Python. The player has a limited number of attempts to guess the hidden word, one letter at a time.
 
