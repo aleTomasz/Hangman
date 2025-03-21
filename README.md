@@ -25,4 +25,4 @@ This project was developed for educational purposes – to practice Python basic
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/aletomasz/hangman.git
+   git clone https://github.com/aleTomasz/Hangman.git
